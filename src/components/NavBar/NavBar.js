@@ -5,6 +5,9 @@ import './navbar.css';
 const NavBar = () => {
     return (
         <div className='el-navbar'>
+            <div className='el-toggleButton'>
+                <button></button>
+            </div>
             <div className='el-links'>
                 <Link to='/'>Home</Link>
                 <Link to='/projects'>Projects</Link>
