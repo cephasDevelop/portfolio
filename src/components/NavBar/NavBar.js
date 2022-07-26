@@ -6,7 +6,7 @@ import ReorderIcon from '@mui/icons-material/Reorder';
 const NavBar = () => {
     const [expandNavbar, setExpandNavbar] = useState(false);
     const location = useLocation();
-    useEffect(() => { 
+    useEffect(() => {
         setExpandNavbar(false);
     },[location]);
 
