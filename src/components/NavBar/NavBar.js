@@ -1,13 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState,useEffect} from 'react';
+import { Link,useLocation } from 'react-router-dom';
 import './navbar.css';
 import ReorderIcon from '@mui/icons-material/Reorder';
 
 const NavBar = () => {
+    const [expandNavbar, setExpandNavbar] = useState(false);
+    const location = useLocation();
+    useEffect(() => { 
+        setExpandNavbar(false);
+    },[location]);
+
     return (
-        <div className='el-navbar'>
+        <div className='el-navbar' id={expandNavbar?"open":"close" }>
             <div className='el-toggleButton'>
-                <button><ReorderIcon/></button>
+                <button onClick={()=> setExpandNavbar(prev=>!prev)}><ReorderIcon /></button>
             </div>
             <div className='el-links'>
                 <Link to='/'>Home</Link>
